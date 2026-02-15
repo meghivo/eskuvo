@@ -16,53 +16,52 @@
 
   <header class="topbar">
     <div class="brand">D & K</div>
-    <a class="chip" href="#rsvp">Ugrás az RSVP-hez</a>
+    <a class="chip" href="#rsvp">Ugrás a kérdőívhez</a>
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero hero-centered" id="top">
-  <div class="container">
-    <div class="hero-center">
-      <!-- virágos szimbólum -->
-      <img class="hero-floral" src="images/floral.png" alt="" aria-hidden="true">
+      <div class="container">
+        <div class="hero-center">
+          
+         <div class="hero-head">
+            <img class="hero-floral side left" src="images/floral.png" alt="">
+            <p class="hero-eyebrow">ESKÜVŐI MEGHÍVÓ</p>
+            <img class="hero-floral side right" src="images/floral.png" alt="">
+          </div>
 
-      <p class="eyebrow">ESKÜVŐI MEGHÍVÓ</p>
-      <h1 class="hero-names">Detti <span class="amp">&amp;</span> Koppány</h1>
+          <div class="hero-text-column">
+            <p class="hero-lead">Örömmel értesítünk Benneteket, hogy</p>
+            <h1 class="hero-names">Detti <span class="amp">&</span> Koppány</h1>
+            <p class="hero-under">örök hűséget fogadunk egymásnak.</p>
+            <p class="hero-invite-line">
+              Ezen alkalomból meghívunk Benneteket, hogy velünk ünnepeljetek az egyházi esküvőnkön.
+            </p>
+          </div>
 
-      <p class="sub hero-sub">
-        Szeretettel meghívunk, hogy velünk ünnepelj!<br/>
-        <strong>2026. július 20.</strong>
-      </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#invite">Meghívó</a>
+            <a class="btn ghost" href="#rsvp">Kérdőív</a>
+          </div>
 
-      <div class="hero-actions hero-actions-center">
-        <a class="btn primary" href="#invite">Meghívó</a>
-        <a class="btn ghost" href="#rsvp">RSVP</a>
+          <div class="hero-photo-wrap">
+            <img class="hero-photo" src="images/hero-photo.jpg" alt="Detti és Koppány fotója">
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- nagy kép, amit te választasz -->
-      <div class="hero-photo-wrap">
-        <img class="hero-photo" src="images/hero-photo.jpg" alt="Detti és Koppány fotója">
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <!-- spacer to give scroll room for the animation -->
     <div class="scroll-spacer" aria-hidden="true"></div>
 
-    <!-- BIG ENVELOPE + INFO SHEET -->
     <section class="section alt" id="invite">
       <div class="container">
         <h2 class="section-title reveal">A meghívó</h2>
 
-        <div class="invite-stage reveal" aria-label="Nagy boríték és kihúzható meghívó">
+        <div class="invite-stage reveal">
+          <div class="shadow"></div>
           <div class="envelope big" id="envelopeBig">
-            <div class="shadow"></div>
 
-            <!-- Card with key info -->
-            <div class="card info-card-sheet" id="cardBig" aria-hidden="true">
+            <div class="card info-card-sheet" id="cardBig">
               <div class="card-inner">
                 <div class="card-title">Részletek</div>
                 <div class="card-names">Detti & Koppány</div>
@@ -71,31 +70,39 @@
                 <div class="sheet-grid">
                   <div class="sheet-item">
                     <div class="sheet-label">Dátum</div>
-                    <div class="sheet-value">2026. június 20. (szombat)</div>
+                    <div class="sheet-value">2026. július 22. (szerda)</div>
                   </div>
+
                   <div class="sheet-item">
-                    <div class="sheet-label">Érkezés</div>
-                    <div class="sheet-value">15:30</div>
+                    <div class="sheet-label">Kezdés</div>
+                    <div class="sheet-value">14:00</div>
                   </div>
+
                   <div class="sheet-item">
                     <div class="sheet-label">Szertartás</div>
-                    <div class="sheet-value">16:00</div>
+                    <div class="sheet-value">Egyházi esküvő</div>
                   </div>
+
                   <div class="sheet-item">
                     <div class="sheet-label">Helyszín</div>
-                    <div class="sheet-value">Budapest — Helyszín neve, cím</div>
+                    <div class="sheet-value">
+                      Szent József Plébániatemplom<br/>
+                      1165 Budapest, Paulheim József tér 1.
+                    </div>
                   </div>
+
                   <div class="sheet-item sheet-wide">
-                    <div class="sheet-label">Program</div>
-                    <div class="sheet-value">Szertartás • Koccintás • Vacsora • Torta • Tánc</div>
+                    <div class="sheet-label">Megjegyzés</div>
+                    <div class="sheet-value">Kérünk Benneteket, hogy 10–15 perccel korábban érkezzetek.</div>
                   </div>
                 </div>
 
-                <div class="card-note">„A legszebb napok azok, amiket együtt élünk meg.”</div>
+                <div class="card-note">
+                  „A legszebb napok azok, amelyeket együtt élünk meg.”
+                </div>
               </div>
             </div>
 
-            <!-- Envelope body -->
             <div class="env-body">
               <div class="env-front"></div>
               <div class="env-left"></div>
@@ -103,111 +110,108 @@
               <div class="env-bottom"></div>
             </div>
 
-            <!-- Flap -->
             <div class="flap" id="flapBig"></div>
-
-            <!-- Seal -->
-            <div class="seal" aria-hidden="true">♡</div>
+            <div class="seal">♡</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- LOCATION -->
     <section class="section" id="location">
       <div class="container">
         <h2 class="section-title reveal">Helyszín térképen</h2>
-        <div class="map reveal" role="group" aria-label="Térkép helyőrző">
+        <div class="map reveal">
           <div class="map-inner">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5394.494266190839!2d19.01906849136615!3d47.46561338395267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741ddc1a888e791%3A0x2309be9a210bd2e!2zRXJkxZFzIMOpcyBGaWFpIEN1a3LDoXN6ZGE!5e0!3m2!1shu!2shu!4v1765826382229!5m2!1shu!2shu"
-    width="100%"
-    height="360"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    title="Helyszín térképen"
-  ></iframe>
-</div>
-
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2694.755437813589!2d19.2319749!3d47.514125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c469b6623631%3A0xc47e383189e47590!2sBudapest%2C%20Paulheim%20J%C3%B3zsef%20t%C3%A9r%201%2C%201165!5e0!3m2!1shu!2shu!4v1700000000000"
+              width="100%"
+              height="360"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Szent József Plébániatemplom"
+            ></iframe>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- DRESS CODE / GIFTS -->
     <section class="section alt" id="extras">
       <div class="container">
         <h2 class="section-title reveal">Dress code & ajándék</h2>
         <div class="cards">
           <article class="info-card reveal">
             <h3>Dress code</h3>
-            <p>Smart elegant. (Opcionális színötlet: világoskék / zöld részletek.)</p>
+            <p>Smart elegant. Opcionális színötlet: világoskék vagy zöld részletek.</p>
           </article>
           <article class="info-card reveal">
             <h3>Ajándék</h3>
-            <p>A legnagyobb ajándék, hogy velünk ünnepelsz. Ha mégis szeretnél, egy kis hozzájárulás a közös jövőnkhöz tökéletes.</p>
+            <p>
+              A legnagyobb ajándék számunkra az, hogy velünk ünnepeltek.
+              Amennyiben mégis szeretnétek, egy kis hozzájárulás közös jövőnkhöz
+              nagy örömmel fogadjuk.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- RSVP -->
     <section class="section" id="rsvp">
       <div class="container">
-        <h2 class="section-title reveal">RSVP</h2>
+        <h2 class="section-title reveal">Kérdőív</h2>
 
         <form
-  class="form reveal"
-  id="rsvpForm"
-  action="https://docs.google.com/forms/d/e/1FAIpQLSc-gzZqmI3lCidOem5YI8iyOLBYvYWRDHb4OzQE06WmTSG17A/formResponse"
-  method="POST"
-  target="hidden_iframe"
->
-  <div class="grid">
-    <label>
-      <span>Név</span>
-      <input name="entry.864093741" type="text" autocomplete="name" required placeholder="" />
-    </label>
+          class="form reveal"
+          id="rsvpForm"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSc-gzZqmI3lCidOem5YI8iyOLBYvYWRDHb4OzQE06WmTSG17A/formResponse"
+          method="POST"
+          target="hidden_iframe"
+        >
+          <div class="grid">
+            <label>
+              <span>Név</span>
+              <input name="entry.864093741" type="text" required />
+            </label>
 
-    <label>
-      <span>Létszám</span>
-      <input name="entry.2058070691" type="number" min="1" max="10" value="1" required />
-    </label>
+            <label>
+              <span>Létszám</span>
+              <input name="entry.2058070691" type="number" min="1" max="10" value="1" required />
+            </label>
 
-    <label>
-      <span>Szükségetek van szállásra?</span>
-      <select name="entry.2040275582" required>
-        <option value="" selected disabled>Válassz…</option>
-        <option value="Igen">Igen</option>
-        <option value="Nem">Nem</option>
-      </select>
-    </label>
-  </div>
+            <label>
+              <span>Szükségetek van szállásra?</span>
+              <select name="entry.2040275582" required>
+                <option value="" disabled selected>Válassz…</option>
+                <option value="Igen">Igen</option>
+                <option value="Nem">Nem</option>
+              </select>
+            </label>
+          </div>
 
-  <!-- Megjegyzés: jelenleg NEM mentjük sheetsbe, csak “extra üzenetnek” hagyjuk -->
-  <label>
-    <span>Megjegyzés</span>
-    <textarea name="note_local" rows="4" placeholder="Ételallergia, kérdések, stb."></textarea>
-  </label>
+          <label class="field">
+            <span class="label">Megjegyzés</span>
+            <textarea
+              name="entry.848444112"
+              rows="4"
+              placeholder="Ételallergia, kérdések, stb."
+            ></textarea>
+          </label>
 
-  <div class="form-actions">
-    <button class="btn primary" type="submit">Küldés</button>
-    <p class="muted" id="formMsg" role="status" aria-live="polite"></p>
-  </div>
-</form>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Küldés</button>
+            <p class="muted" id="formMsg" role="status"></p>
+          </div>
+        </form>
 
-<!-- Rejtett iframe: ide küldi el a Google Formnak, nem dob át -->
-<iframe name="hidden_iframe" style="display:none;"></iframe>
-
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
       </div>
     </section>
 
     <footer class="footer">
       <div class="container">
-        <p>❤️ Szeretettel várunk! • Detti & Koppány</p>
-        <a class="to-top" href="#top">Vissza a tetejére ↑</a>
+        <p>❤️ Szeretettel várunk Benneteket! • Detti & Koppány</p>
+        <a class="to-top chip" href="#top">Vissza a tetejére ↑</a>
       </div>
     </footer>
   </main>
