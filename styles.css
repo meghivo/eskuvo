@@ -17,11 +17,10 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   color: var(--ink);
   background: #f7fbff;
   overflow-x: hidden;
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 /* BACKGROUND */
@@ -79,17 +78,17 @@ body {
 
 .hero-head {
   display: flex;
-  flex-direction: row;     /* Kényszerítjük az egy soros elrendezést */
-  align-items: center;     /* Függőlegesen tökéletesen egy vonalba teszi őket */
-  justify-content: center; /* Az egész blokkot középre helyezi */
-  gap: 25px;               /* Itt állítsd be a távolságot a virág és a szöveg között */
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
   margin-bottom: 30px;
   width: 100%;
 }
 
 .hero-eyebrow {
-  margin: 0 !important;    /* Töröljük az alapértelmezett margókat, hogy ne tolja el az irányt */
-  white-space: nowrap;     /* Megakadályozzuk, hogy a szöveg véletlenül több sorba törjön */
+  margin: 0 !important;
+  white-space: nowrap;
   font-size: clamp(30px, 1.2vw, 18px);
   letter-spacing: 40px;
   text-transform: uppercase;
@@ -97,12 +96,11 @@ body {
 }
 
 .hero-floral.side {
-  height: 100px;            /* Itt állítsd be a virágok méretét */
+  height: 100px;
   width: auto;
   display: block;
 }
 
-/* A jobb oldali virág tükrözése, hogy szimmetrikus legyen */
 .hero-floral.side.right {
   transform: scaleX(-1);
 }
@@ -169,48 +167,109 @@ body {
 .btn.primary { background: linear-gradient(135deg, rgba(191, 230, 255, 0.95), rgba(191, 247, 210, 0.9)); }
 .btn.ghost { background: rgba(255, 255, 255, 0.55); }
 
-/* ENVELOPE (Meghívó) */
-.scroll-spacer { height: 15vh; }
-.invite-stage { display: flex; justify-content: center; align-items: center; padding: 20px 0; }
-.envelope { position: relative; width: min(800px, 90vw); aspect-ratio: 4 / 3; filter: drop-shadow(0 20px 55px rgba(16, 33, 43, 0.18)); }
-.envelope.big { width: min(900px, 95vw) !important; aspect-ratio: 24 / 11 !important; }
+/* ========================================= */
+/* ===== ÚJ, TISZTA 3D BORÍTÉK RENDSZER ==== */
+/* ========================================= */
 
-.env-body {
-  position: absolute; inset: 12% 6% 10% 6%; border-radius: 18px;
-  background: linear-gradient(135deg, var(--envBlue), var(--envBlueDeep));
-  border: 1px solid var(--envLine); backdrop-filter: blur(10px); z-index: 2; overflow: hidden;
+.scroll-spacer { height: 15vh; }
+.invite-stage { 
+  display: flex; justify-content: center; align-items: center; 
+  padding: 80px 0 200px 0; /* Hatalmas hely fent és lent a nagyított meghívónak */
+}
+
+.envelope {
+  position: relative;
+  width: min(700px, 90vw);
+  aspect-ratio: 16 / 11; 
+  perspective: 1200px;
+  filter: drop-shadow(0 30px 60px rgba(16, 33, 43, 0.25));
+}
+
+.env-back {
+  position: absolute;
+  inset: 0;
+  background: var(--envBlueDeep);
+  border-radius: 8px;
+  z-index: 1;
 }
 
 .card {
-  position: absolute; left: 14%; right: 14%; top: 12%; height: 92%;
-  border-radius: 18px; background: white; border: 1px solid rgba(16,33,43,0.1);
-  box-shadow: 0 20px 55px rgba(16,33,43,0.18); z-index: 1; transform: translateY(62%);
+  position: absolute;
+  left: 3%; 
+  right: 3%; 
+  top: 3%; 
+  /* FONTOS: Innen töröld ki a "bottom: 3%;" sort! */
+  height: 94%; /* ÚJ: Ezt add hozzá (alapból kitölti a borítékot) */
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  z-index: 2;
+  will-change: transform, height; /* ÚJ: a height is animálódik */
+  overflow: hidden;
 }
 
-.card-inner { height: 100%; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; }
-.card-names { font-family: "Playfair Display", serif; font-size: 28px; }
-.card-line { height: 1px; background: rgba(16, 33, 43, 0.1); margin: 15px 0; }
+.invite-photo {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; /* ÚJ: Ez garantálja, hogy a címer és a nevek felül maradjanak! */
+  display: block;
+}
 
-.sheet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-.sheet-item { padding: 12px; border-radius: 14px; border: 1px solid rgba(16,33,43,0.1); background: #fdfdfd; }
-.sheet-wide { grid-column: 1 / -1; }
-.sheet-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
-.sheet-value { font-size: 14px; line-height: 1.4; }
+.env-left, .env-right, .env-bottom {
+  position: absolute;
+  z-index: 3;
+  border-radius: 8px;
+}
+
+.env-left {
+  inset: 0 50% 0 0;
+  background: var(--envBlue);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  filter: brightness(0.98);
+}
+
+.env-right {
+  inset: 0 0 0 50%;
+  background: var(--envBlue);
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  filter: brightness(0.96);
+}
+
+.env-bottom {
+  inset: 35% 0 0 0;
+  background: var(--envBlue);
+  clip-path: polygon(0 100%, 50% 15%, 100% 100%);
+  filter: drop-shadow(0 -5px 10px rgba(0,0,0,0.08));
+}
 
 .flap {
-  position: absolute; left: 6%; right: 6%; top: 12%; height: 46%;
-  clip-path: polygon(0 0, 50% 100%, 100% 0);
-  background: var(--envBlueDeep); border: 1px solid var(--envLine);
-  transform-origin: top; z-index: 6;
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 60%;
+  background: var(--envBlue);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top;
+  z-index: 5;
+  border-radius: 8px 8px 0 0;
+  will-change: transform;
+  filter: drop-shadow(0 8px 10px rgba(0,0,0,0.15));
 }
 
 .seal {
-  position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%);
-  width: 60px; height: 60px; border-radius: 50%; background: white;
-  display: grid; place-items: center; z-index: 7; box-shadow: var(--shadowSoft);
+  position: absolute;
+  top: 55%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px; height: 60px;
+  border-radius: 50%; background: white;
+  display: grid; place-items: center;
+  z-index: 6; box-shadow: var(--shadowSoft);
+  will-change: transform, opacity;
+  color: var(--ink);
+  font-size: 24px;
 }
 
-/* SECTIONS & CARDS */
+/* ========================================= */
+/* SECTIONS & CARDS (Eredeti kódod) */
 .section { padding: 80px 0; }
 .section.alt { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(10px); border-top: 1px solid var(--border); }
 .section-title { font-family: "Playfair Display", serif; font-size: 38px; text-align: center; margin-bottom: 40px; }
@@ -218,49 +277,29 @@ body {
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
 .info-card { background: white; padding: 30px; border-radius: 20px; border: 1px solid var(--border); box-shadow: var(--shadowSoft); }
 
-/* MAP & FORM */
+/* MAP & FORM (Eredeti kódod) */
 .map { border-radius: 20px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadowSoft); }
 .map-inner { padding: 15px; background: white; }
 
 .form { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 24px; box-shadow: var(--shadowSoft); }
-.form .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px; }
-input, select, textarea { width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #ddd; font-family: inherit; }
+.form .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px; }
 
-/* FOOTER */
-.footer { padding: 80px 0; border-top: 1px solid var(--border); }
-.footer .container { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
 label span, .field .label {
-  display: block;        /* Külön sorba teszi a feliratot */
-  margin-bottom: 12px;   /* Itt állíthatod a távolságot a szöveg és a doboz között */
+  display: block;
+  margin-bottom: 12px;
   font-weight: 600;
   font-size: 14px;
 }
 
 input, select, textarea {
   width: 100%;
-  padding: 14px; /* Kicsit nagyobb hely a dobozon belül */
+  padding: 14px;
   border-radius: 12px;
   border: 1px solid rgba(0,0,0,0.1);
   background: #fff;
+  font-family: inherit;
 }
 
-.form .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;             /* A dobozok közötti távolság */
-  margin-bottom: 30px;
-}
-
-/* REVEAL */
-.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
-.reveal.in { opacity: 1; transform: translateY(0); }
-
-@media (max-width: 600px) {
-  .sheet-grid { grid-template-columns: 1fr; }
-  .envelope.big { aspect-ratio: 4/3 !important; }
-}
-
-/* ===== RSVP: gomb ne csússzon rá semmire ===== */
 .form .field {
   display: block;
   margin-top: 18px;
@@ -269,19 +308,17 @@ input, select, textarea {
 .form .field textarea {
   display: block;
   width: 100%;
-  margin-bottom: 22px; /* legyen hely a gomb előtt */
+  margin-bottom: 22px;
 }
 
-/* A gomb külön sorban legyen, és ne lebegjen */
 .form-actions {
   display: flex;
   align-items: center;
   gap: 14px;
   margin-top: 6px;
-  flex-wrap: wrap; /* kis kijelzőn se törjön ronda módon */
+  flex-wrap: wrap;
 }
 
-/* Ha valami float/position miatt mégis elcsúszna */
 .form-actions::before,
 .form-actions::after {
   content: "";
@@ -289,87 +326,80 @@ input, select, textarea {
   clear: both;
 }
 
-/* ===== ENVELOPE 3D + "IGAZI BORÍTÉK" ANIMÁCIÓ ===== */
+/* FOOTER (Eredeti kódod) */
+.footer { padding: 80px 0; border-top: 1px solid var(--border); }
+.footer .container { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
 
-/* Adjunk 3D perspektívát magának a borítéknak */
-.envelope {
-  perspective: 1200px;
-  perspective-origin: 50% 40%;
-  transform-style: preserve-3d;
+/* REVEAL (Eredeti kódod) */
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 600px) {
+  .envelope { width: 95vw; }
 }
 
-/* A boríték teste vágja (clip) a belső lapot, hogy tényleg "belülről" jöjjön */
-.env-body {
-  overflow: hidden;              /* nagyon fontos */
-  transform-style: preserve-3d;
+.hero-center {
+  position: relative; /* EZ NAGYON FONTOS: ez tartja a helyén a képeket! */
+  z-index: 1;
 }
 
-/* A fedél 3D-ben forduljon */
-.flap {
-  transform-style: preserve-3d;
-  transform-origin: 50% 0%;
-  backface-visibility: hidden;
-  will-change: transform;
-}
-
-/* A lap (card) legyen a boríték belsejében rétegezve */
-.card {
-  transform-style: preserve-3d;
-  will-change: transform;
-  z-index: 5; /* a boríték teste felett, de a pecsét/előlap logikát JS kezeli */
-}
-
-/* Pecsét legyen mindig felül, de majd JS-ben eltűntetjük */
-.seal {
-  z-index: 7;
-  will-change: opacity, transform;
-}
-
-/* Kicsi plusz: amikor jön ki a lap, legyen kis árnyék mélység */
-.envelope .card {
-  box-shadow: 0 24px 70px rgba(16, 33, 43, 0.22);
-}
-
-/* A boríték előlapi rétegei maradjanak a lap előtt részben (optikailag) */
-.env-front,
-.env-left,
-.env-right,
-.env-bottom {
-  z-index: 6;
-}
-
-/* De az env-front NE takarja teljesen a lapot: legyen kicsit áttetsző */
-.env-front {
-  opacity: 0.95;
-}
-
-/* Mobilon kicsit visszafogottabb 3D */
-@media (max-width: 700px) {
-  .envelope { perspective: 900px; }
-}
-
-/* a boríték teste vágja a kártyát, így tényleg "belülről jön" */
-.env-body {
-  overflow: hidden;
-  position: absolute; /* nálad ez már így van, de legyen biztos */
-}
-
-/* a kártya MOST már az env-body-n belül van, ezért oda igazítjuk */
-.env-body .card {
+/* Kifejezetten a szövegek mellé beszúrt dekor képek */
+.inline-deco-img {
   position: absolute;
-  left: 8%;
-  right: 8%;
-  top: 10%;
-  height: 92%;
-  z-index: 2; /* a body háttere felett */
-  transform: translateY(72%); /* induljon mélyen bent */
+  z-index: -1; /* A szöveg mögé küldjük */
+  pointer-events: none; /* Ne lehessen rákattintani */
+  
+  /* Egy picit átlátszóbbá és nagyon finoman elmosódottá tesszük magát a képet is */
+  opacity: 0.75; 
+  filter: blur(1px); 
+  
+  /* EZ A VARÁZSLAT: Fokozatosan eltünteti (elhomályosítja) a kép széleit */
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 75%);
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 75%);
 }
 
-/* a boríték előlapi háromszögei legyenek a kártya ELŐTT */
-.env-front, .env-left, .env-right, .env-bottom {
-  z-index: 4;
+/* Mobilon kicsit kisebbek legyenek */
+@media (max-width: 768px) {
+  .inline-deco-img { opacity: 0.5; width: 140px !important; }
 }
 
-/* a fedél még ezek fölött */
-.flap { z-index: 6; }
-.seal { z-index: 7; }
+/* ========================================= */
+/* LÁBLÉC VIRÁGOS DIZÁJN */
+/* ========================================= */
+.footer-floral-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Távolság a virágok és a szöveg között */
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.footer-text {
+  font-family: 'Cinzel', serif; /* Ugyanaz a betűtípus, mint legfelül */
+  font-size: clamp(10px, 2.5vw, 16px); /* Dinamikus méret: gépen nagyobb, mobilon kisebb */
+  letter-spacing: 3px; /* Elegáns, de nem túl nagy betűköz */
+  text-transform: uppercase; /* Csupa nagybetűs stílus */
+  margin: 0;
+  white-space: nowrap; /* Kikényszeríti, hogy 1 sorban maradjon! */
+  color: var(--ink);
+}
+
+.footer-flower {
+  height: 35px; /* Visszafogottabb, kisebb virágméret a láblécbe */
+  width: auto;
+}
+
+/* Mobilon (kis képernyőn) még jobban összenyomjuk, hogy biztosan kiférjen 1 sorba */
+@media (max-width: 600px) {
+  .footer-floral-wrap {
+    gap: 8px; /* Kisebb szünet a kép és a szöveg között */
+  }
+  .footer-text {
+    letter-spacing: 1px; /* Kisebb betűköz */
+  }
+  .footer-flower {
+    height: 20px; /* Még kisebb virág */
+  }
+}
