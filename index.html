@@ -13,7 +13,30 @@
   <div class="bg"></div>
 
   <header class="topbar">
-    <a class="chip" href="#rsvp">Ugrás a kérdőívhez</a>
+    <a class="brand" href="#top">D &amp; K</a>
+
+    <div class="topbar-menu" data-topbar-menu>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="topbarNav"
+        aria-label="Menü megnyitása"
+      >
+        <span class="menu-toggle-label">Menü</span>
+        <span class="menu-toggle-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <nav class="topbar-nav" id="topbarNav" aria-label="Ugrás a szekciókhoz">
+        <a class="chip" href="#album">Fotóalbum</a>
+        <a class="chip" href="#info">Információk</a>
+        <a class="chip" href="#rsvp">Kérdőív</a>
+      </nav>
+    </div>
   </header>
 
   <main>
@@ -73,40 +96,277 @@
       </div>
     </section>
 
-    <section class="section" id="location">
+    <section class="section photo-section" id="album">
       <div class="container">
-        <h2 class="section-title reveal">Helyszín térképen</h2>
-        <div class="map-grid reveal">
-          <div class="map">
-            <p class="map-label">Szent József Plébániatemplom</p>
-            <div class="map-inner">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2694.755437813589!2d19.2319749!3d47.514125!2m3!1f0!2f0!3f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c469b6623631%3A0xc47e383189e47590!2sBudapest%2C%20Paulheim%20J%C3%B3zsef%20t%C3%A9r%201%2C%201165!5e0!3m2!1shu!2shu!4v1700000000000"
-                width="100%"
-                height="360"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Szent József Plébániatemplom"
-              ></iframe>
+        <h2 class="section-title reveal">Fotóalbum</h2>
+
+        <section class="photo-carousel reveal" id="engagementCarousel" aria-label="Eljegyzési fotógaléria">
+          <div class="photo-carousel-head">
+            <p class="photo-carousel-label">Eljegyzési képek</p>
+            <div class="photo-carousel-controls">
+              <button class="carousel-arrow" type="button" data-carousel-prev aria-label="Előző kép">‹</button>
+              <button class="carousel-arrow" type="button" data-carousel-next aria-label="Következő kép">›</button>
             </div>
           </div>
 
-          <div class="map">
-            <p class="map-label">2621 Verőce, Wass Albert utca</p>
-            <div class="map-inner">
-              <iframe
-                src="https://www.google.com/maps?q=2621%20Ver%C5%91ce%2C%20Wass%20Albert%20utca&output=embed"
-                width="100%"
-                height="360"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="2621 Verőce, Wass Albert utca"
-              ></iframe>
+          <div class="photo-carousel-viewport" data-carousel-viewport>
+            <div class="photo-carousel-track" data-carousel-track>
+              <article class="photo-slide"><img src="images/1.png" alt="Eljegyzési fotó 1" loading="lazy"></article>
+              <article class="photo-slide"><img src="images/2.png" alt="Eljegyzési fotó 2" loading="lazy"></article>
+              <article class="photo-slide"><img src="images/3.png" alt="Eljegyzési fotó 3" loading="lazy"></article>
+              <article class="photo-slide"><img src="images/4.png" alt="Eljegyzési fotó 4" loading="lazy"></article>
+              <article class="photo-slide"><img src="images/5.png" alt="Eljegyzési fotó 5" loading="lazy"></article>
+              <article class="photo-slide"><img src="images/6.png" alt="Eljegyzési fotó 6" loading="lazy"></article>
+              <article class="photo-slide"><img src="images/7.png" alt="Eljegyzési fotó 7" loading="lazy"></article>
+              <article class="photo-slide"><img src="images/8.png" alt="Eljegyzési fotó 8" loading="lazy"></article>
+              <article class="photo-slide"><img src="images/9.png" alt="Eljegyzési fotó 9" loading="lazy"></article>
+              <article class="photo-slide"><img src="images/10.png" alt="Eljegyzési fotó 10" loading="lazy"></article>
+              <article class="photo-slide"><img src="images/11.png" alt="Eljegyzési fotó 11" loading="lazy"></article>
+              <article class="photo-slide"><img src="images/12.png" alt="Eljegyzési fotó 12" loading="lazy"></article>
+              <article class="photo-slide"><img src="images/13.png" alt="Eljegyzési fotó 13" loading="lazy"></article>
+              <article class="photo-slide"><img src="images/14.png" alt="Eljegyzési fotó 14" loading="lazy"></article>
+              <article class="photo-slide"><img src="images/15.png" alt="Eljegyzési fotó 15" loading="lazy"></article>
             </div>
+          </div>
+
+          <div class="photo-carousel-footer">
+            <div class="photo-carousel-dots" data-carousel-dots aria-label="Galéria oldalak"></div>
+            <p class="photo-carousel-count" data-carousel-count>1 / 15</p>
+          </div>
+        </section>
+
+        <div class="album-share reveal">
+          <div class="album-share-copy">
+            <h3 class="album-share-title">Ha készítettél fotókat a nagy napról, oszd meg velünk itt</h3>
+            <a
+              class="btn primary album-link"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdPy41asGG96HzwQGCkNpkx58_Eb2CmfMji0H2u-g-hmOz4RQ/viewform?usp=publish-editor"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fotófeltöltő űrlap
+            </a>
+          </div>
+
+          <a
+            class="album-share-qr"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdPy41asGG96HzwQGCkNpkx58_Eb2CmfMji0H2u-g-hmOz4RQ/viewform?usp=publish-editor"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Fotófeltöltő űrlap megnyitása"
+          >
+            <img
+              class="album-share-qr-image"
+              src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSdPy41asGG96HzwQGCkNpkx58_Eb2CmfMji0H2u-g-hmOz4RQ%2Fviewform%3Fusp%3Dpublish-editor"
+              alt="QR-kód a fotófeltöltő űrlaphoz"
+              loading="lazy"
+            >
+          </a>
+        </div>
+
+        <div class="submitted-links reveal" id="submittedLinks" data-gallery-endpoint="https://script.google.com/macros/s/AKfycbwPO_DV5cp3oA53rWVyTPNlpdoV2OEoW2eIOVS5uaLwDrAJyjDOnF6yONY3FQlhDFavvg/exec">
+          <div class="submitted-links-head">
+            <h3>Eddig beküldött képek</h3>
+          </div>
+
+          <div class="submitted-gallery-shell">
+            <p class="submitted-gallery-status" id="submittedGalleryStatus"></p>
+            <div class="submitted-gallery" id="submittedGallery" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section info-section" id="info">
+      <div class="container">
+        <h2 class="section-title reveal">Információk</h2>
+        <div class="info-window reveal">
+          <div class="info-window-bar" role="tablist" aria-label="Információk fülei">
+            <button
+              class="info-window-tab is-active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="info-panel-menetrend"
+              id="info-tab-menetrend"
+              data-info-tab="menetrend"
+            >
+              Menetrend
+            </button>
+            <button
+              class="info-window-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="info-panel-travel"
+              id="info-tab-travel"
+              data-info-tab="travel"
+            >
+              Szállás és utazás
+            </button>
+            <button
+              class="info-window-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="info-panel-location"
+              id="info-tab-location"
+              data-info-tab="location"
+            >
+              Térkép
+            </button>
+          </div>
+
+          <div class="info-window-body">
+            <article
+              class="info-panel is-active"
+              id="info-panel-menetrend"
+              role="tabpanel"
+              aria-labelledby="info-tab-menetrend"
+              data-info-panel="menetrend"
+            >
+              <div class="timeline-board" id="menetrend">
+                <div class="timeline-board-head">
+                  <h3 class="timeline-title panel-title">Menetrend</h3>
+                </div>
+
+                <div class="timeline-layout">
+                  <div class="timeline-column">
+                    <div class="timeline-item">
+                      <span class="timeline-icon">◎</span>
+                      <div>
+                        <p class="timeline-time">16:00</p>
+                        <h4>Érkezés</h4>
+                      </div>
+                    </div>
+
+                    <div class="timeline-item">
+                      <span class="timeline-icon">✿</span>
+                      <div>
+                        <p class="timeline-time">17:00</p>
+                        <h4>Szertartás</h4>
+                      </div>
+                    </div>
+
+                    <div class="timeline-item">
+                      <span class="timeline-icon">◌</span>
+                      <div>
+                        <p class="timeline-time">17:30</p>
+                        <h4>Gratulációk</h4>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="timeline-center-line" aria-hidden="true"></div>
+
+                  <div class="timeline-column">
+                    <div class="timeline-item">
+                      <span class="timeline-icon">◍</span>
+                      <div>
+                        <p class="timeline-time">18:00</p>
+                        <h4>Közös képek</h4>
+                      </div>
+                    </div>
+
+                    <div class="timeline-item">
+                      <span class="timeline-icon">♫</span>
+                      <div>
+                        <p class="timeline-time">18:30</p>
+                        <h4>Vacsora</h4>
+                      </div>
+                    </div>
+
+                    <div class="timeline-item">
+                      <span class="timeline-icon">✧</span>
+                      <div>
+                        <p class="timeline-time">Később</p>
+                        <h4>További programok</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="info-panel"
+              id="info-panel-travel"
+              role="tabpanel"
+              aria-labelledby="info-tab-travel"
+              data-info-panel="travel"
+              hidden
+            >
+              <div class="travel-window" id="travel">
+                <div class="travel-window-head">
+                  <h3 class="travel-title panel-title">Szállás és utazás</h3>
+                </div>
+
+                <div class="travel-placeholder-grid">
+                  <div class="travel-placeholder-card">
+                    <p class="travel-placeholder-title">Szállás</p>
+                    <p class="travel-placeholder-text">
+                      Ide kerülnek majd a szálláslehetőségek, címek és foglalási tudnivalók.
+                    </p>
+                  </div>
+
+                  <div class="travel-placeholder-card">
+                    <p class="travel-placeholder-title">Utazás</p>
+                    <p class="travel-placeholder-text">
+                      Ide kerülnek majd az utazási opciók, autós helyek és egyéb információk.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="info-panel"
+              id="info-panel-location"
+              role="tabpanel"
+              aria-labelledby="info-tab-location"
+              data-info-panel="location"
+              hidden
+            >
+              <div class="travel-window">
+                <div class="travel-window-head">
+                  <h3 class="travel-title panel-title">Helyszín</h3>
+                </div>
+
+                <div class="map-grid">
+                  <div class="map">
+                    <p class="map-label">Szent József Plébániatemplom</p>
+                    <div class="map-inner">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2694.755437813589!2d19.2319749!3d47.514125!2m3!1f0!2f0!3f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c469b6623631%3A0xc47e383189e47590!2sBudapest%2C%20Paulheim%20J%C3%B3zsef%20t%C3%A9r%201%2C%201165!5e0!3m2!1shu!2shu!4v1700000000000"
+                        width="100%"
+                        height="360"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Szent József Plébániatemplom"
+                      ></iframe>
+                    </div>
+                  </div>
+
+                  <div class="map">
+                    <p class="map-label">2621 Verőce, Wass Albert utca</p>
+                    <div class="map-inner">
+                      <iframe
+                        src="https://www.google.com/maps?q=2621%20Ver%C5%91ce%2C%20Wass%20Albert%20utca&output=embed"
+                        width="100%"
+                        height="360"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="2621 Verőce, Wass Albert utca"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -142,6 +402,25 @@
                 <option value="Nem">Nem</option>
               </select>
             </label>
+
+            <label>
+              <span>Szükségetek van autóra a templomtól Verőce felé?</span>
+              <select name="entry.267849797" required>
+                <option value="" disabled selected>Válassz…</option>
+                <option value="Igen">Igen</option>
+                <option value="Nem">Nem</option>
+              </select>
+            </label>
+
+            <label class="form-center-field form-center-field-wide">
+              <span>Van még hely az autódban Verőce felé? Ha igen, mennyi?</span>
+              <input
+                name="entry.949808376"
+                type="text"
+                placeholder="Pl. 2 fő / nincs hely"
+                required
+              />
+            </label>
           </div>
 
           <label class="field">
@@ -172,7 +451,6 @@
           <img class="hero-floral side right footer-flower" src="images/floral.png" alt="">
         </div>
         
-        <a class="to-top chip" href="#top">Vissza a tetejére ↑</a>
       </div>
     </footer>
 
