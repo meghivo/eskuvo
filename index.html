@@ -102,7 +102,10 @@
 
         <section class="photo-carousel reveal" id="engagementCarousel" aria-label="Eljegyzési fotógaléria">
           <div class="photo-carousel-head">
-            <p class="photo-carousel-label">Eljegyzési képek</p>
+            <div class="photo-carousel-heading">
+              <p class="photo-carousel-label">Eljegyzési képek</p>
+              <p class="photo-carousel-note">Acadia, Maine 2025.08.06.</p>
+            </div>
             <div class="photo-carousel-controls">
               <button class="carousel-arrow" type="button" data-carousel-prev aria-label="Előző kép">‹</button>
               <button class="carousel-arrow" type="button" data-carousel-next aria-label="Következő kép">›</button>
@@ -148,20 +151,14 @@
             </a>
           </div>
 
-          <a
-            class="album-share-qr"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdPy41asGG96HzwQGCkNpkx58_Eb2CmfMji0H2u-g-hmOz4RQ/viewform?usp=publish-editor"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Fotófeltöltő űrlap megnyitása"
-          >
+          <div class="album-share-qr" aria-hidden="true">
             <img
               class="album-share-qr-image"
               src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSdPy41asGG96HzwQGCkNpkx58_Eb2CmfMji0H2u-g-hmOz4RQ%2Fviewform%3Fusp%3Dpublish-editor"
               alt="QR-kód a fotófeltöltő űrlaphoz"
               loading="lazy"
             >
-          </a>
+          </div>
         </div>
 
         <div class="submitted-links reveal" id="submittedLinks" data-gallery-endpoint="https://script.google.com/macros/s/AKfycbwPO_DV5cp3oA53rWVyTPNlpdoV2OEoW2eIOVS5uaLwDrAJyjDOnF6yONY3FQlhDFavvg/exec">
@@ -227,63 +224,7 @@
             >
               <div class="timeline-board" id="menetrend">
                 <div class="timeline-board-head">
-                  <h3 class="timeline-title panel-title">Menetrend</h3>
-                </div>
-
-                <div class="timeline-layout">
-                  <div class="timeline-column">
-                    <div class="timeline-item">
-                      <span class="timeline-icon">◎</span>
-                      <div>
-                        <p class="timeline-time">16:00</p>
-                        <h4>Érkezés</h4>
-                      </div>
-                    </div>
-
-                    <div class="timeline-item">
-                      <span class="timeline-icon">✿</span>
-                      <div>
-                        <p class="timeline-time">17:00</p>
-                        <h4>Szertartás</h4>
-                      </div>
-                    </div>
-
-                    <div class="timeline-item">
-                      <span class="timeline-icon">◌</span>
-                      <div>
-                        <p class="timeline-time">17:30</p>
-                        <h4>Gratulációk</h4>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="timeline-center-line" aria-hidden="true"></div>
-
-                  <div class="timeline-column">
-                    <div class="timeline-item">
-                      <span class="timeline-icon">◍</span>
-                      <div>
-                        <p class="timeline-time">18:00</p>
-                        <h4>Közös képek</h4>
-                      </div>
-                    </div>
-
-                    <div class="timeline-item">
-                      <span class="timeline-icon">♫</span>
-                      <div>
-                        <p class="timeline-time">18:30</p>
-                        <h4>Vacsora</h4>
-                      </div>
-                    </div>
-
-                    <div class="timeline-item">
-                      <span class="timeline-icon">✧</span>
-                      <div>
-                        <p class="timeline-time">Később</p>
-                        <h4>További programok</h4>
-                      </div>
-                    </div>
-                  </div>
+                  <img class="timeline-title-image" src="images/menetrend.jpeg" alt="Menetrend">
                 </div>
               </div>
             </article>
@@ -304,16 +245,54 @@
                 <div class="travel-placeholder-grid">
                   <div class="travel-placeholder-card">
                     <p class="travel-placeholder-title">Szállás</p>
-                    <p class="travel-placeholder-text">
-                      Ide kerülnek majd a szálláslehetőségek, címek és foglalási tudnivalók.
-                    </p>
+                    <div class="travel-placeholder-text">
+                      <p>
+                        A környéken több szálláslehetőség közül válogathattok, így mindenki
+                        megtalálhatja a számára legmegfelelőbbet.
+                      </p>
+                      <p>
+                        Összegyűjtöttünk néhány kedvező lehetőséget is, hogy megkönnyítsük a választást.
+                      </p>
+                      <p>
+                        Kérünk Benneteket, hogy foglalás előtt mindenképp keressetek minket!
+                      </p>
+                    </div>
+                    <div class="travel-links">
+                      <a
+                        class="travel-link-card"
+                        href="https://udultetes8.hu/magyarkut/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <span class="travel-link-tag">Ajánlott szállás</span>
+                        <span class="travel-link-name">Üdültetés 8</span>
+                        <span class="travel-link-url">udultetes8.hu/magyarkut</span>
+                      </a>
+                      <a
+                        class="travel-link-card"
+                        href="https://sulitura.hu/szendehely/katalinpusztai-diaktabor-szendehely"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <span class="travel-link-tag">Ajánlott szállás</span>
+                        <span class="travel-link-name">Katalinpusztai Diáktábor</span>
+                        <span class="travel-link-url">sulitura.hu/szendehely/katalinpusztai-diaktabor-szendehely</span>
+                      </a>
+                    </div>
                   </div>
 
                   <div class="travel-placeholder-card">
                     <p class="travel-placeholder-title">Utazás</p>
-                    <p class="travel-placeholder-text">
-                      Ide kerülnek majd az utazási opciók, autós helyek és egyéb információk.
-                    </p>
+                    <div class="travel-placeholder-text">
+                      <p>
+                        Az este végén sem kell aggódni a hazajutás miatt: az esküvő alatt
+                        sofőrszolgálat vagy taxi áll rendelkezésetekre.
+                      </p>
+                      <p>
+                        Így mindenki nyugodtan élvezheti az ünneplést, mi gondoskodunk róla,
+                        hogy biztonságban hazaérjetek.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -391,7 +370,7 @@
 
             <label>
               <span>Létszám</span>
-              <input name="entry.2058070691" type="number" min="1" max="10" value="1" required />
+              <input class="guest-count-input" name="entry.2058070691" type="number" min="1" value="1" required />
             </label>
 
             <label>
@@ -403,8 +382,8 @@
               </select>
             </label>
 
-            <label>
-              <span>Szükségetek van autóra a templomtól Verőce felé?</span>
+            <label class="form-wide-question">
+              <span>Szükségetek van fuvarra a templomtól Verőce felé?</span>
               <select name="entry.267849797" required>
                 <option value="" disabled selected>Válassz…</option>
                 <option value="Igen">Igen</option>
@@ -412,7 +391,7 @@
               </select>
             </label>
 
-            <label class="form-center-field form-center-field-wide">
+            <label class="form-wide-question form-wide-question-label">
               <span>Van még hely az autódban Verőce felé? Ha igen, mennyi?</span>
               <input
                 name="entry.949808376"
