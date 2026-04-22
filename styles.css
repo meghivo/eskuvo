@@ -1538,6 +1538,10 @@ input, select, textarea {
 }
 
 @media (max-width: 520px) {
+  .form-wide-question-label span {
+    white-space: normal;
+  }
+
   .chip {
     width: 100%;
     text-align: center;
